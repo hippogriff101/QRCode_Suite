@@ -20,8 +20,8 @@ if __name__ == "__main__":
   \___\_\_|  \_\  \_____\___/ \__,_|\___| |_____/ \__,_|_|\__\___|
 """)
     time.sleep(0.5)
-    print("      QR Code Suite - CLI Version       ")
-    text = "     Created by Freddie Yershon         "
+    print("QR Code Suite - CLI Version")
+    text = "Copyright (c) 2026 Freddie Yershon"
     for char in text:
         print(char, end='', flush=True)
         time.sleep(0.1)
