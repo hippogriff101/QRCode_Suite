@@ -1,0 +1,35 @@
+from tkinter import *
+from tkinter import ttk
+import qrcode
+
+number = 1
+
+def main():
+    global number
+    img = qrcode.make(coify.get())
+    filename = f"qrcode_suite{number}.png" 
+    img.save(filename)
+    result_message.set(f"QR code generated and saved successfully as '{filename}'.")
+    number += 1
+
+root = Tk()
+root.title("Basic QR Code Generator")
+root.columnconfigure(0, weight=1)
+root.rowconfigure(0, weight=1)
+
+mainframe = ttk.Frame(root, padding=(3, 3, 12, 12))
+mainframe.grid(column=0, row=0, sticky=(N, W, E, S))
+mainframe.columnconfigure(2, weight=1)
+
+coify = StringVar()
+coify_entry = ttk.Entry(mainframe, width=30, textvariable=coify)
+coify_entry.grid(column=2, row=1, sticky=(W, E), padx=5, pady=5)
+
+result_message = StringVar()
+result_message.set("Enter text and click QRify to generate a QR code.")
+ttk.Label(mainframe, textvariable=result_message).grid(column=2, row=2, sticky=(W, E), padx=5, pady=5)
+
+ttk.Button(mainframe, text="QRify", command=main).grid(column=3, row=3, sticky=W, padx=5, pady=5)
+
+coify_entry.focus()
+root.mainloop()
