@@ -1,10 +1,13 @@
 ﻿# QRCode_Suite
 
-A collection of differant ways to make QR Code's using python!
+A collection of differant ways to make QR Code's using python! This includes a version for terminal, desktop app, Discord and Slack! I will then make a website to host it all.
 
-As I make more modes for this there will be seperate instructions for running each!
+> [!NOTE]
+> If you are reviewing for [Flavortown](flavortown.hackclub.com) Then please check the ship note, I'm working on the next ship while I'm waiting so there are more commits and stuff.
+## Docs
+_how to get it all working_
 
-## Modes
+Pick the version you want to try out and follow the steps bellow!
 
 ### CLI Mode
 #### Local
@@ -17,10 +20,11 @@ pip install qrcode
 4. Follow instructions on file to make QR Code
 #### Executable
 1. Download `QR_CLI.exe` from releases tab
-2. Run the exe and follow instructions
+2. Run the `.exe` and follow instructions on screen
 
 ### GUI Mode
-(_in dev_)
+(_still in development_)
+
 
 ### Discord Bot
 (_in dev_)
