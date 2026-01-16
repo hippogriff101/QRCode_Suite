@@ -1,13 +1,15 @@
 from tkinter import *
 from tkinter import ttk
 import qrcode
+import os
 
 number = 1
+path = os.getcwd()
 
 def main():
     global number
     img = qrcode.make(coify.get())
-    filename = f"qrcode_suite{number}.png" 
+    filename = f"{path}/qrcode_suite{number}.png" 
     img.save(filename)
     result_message.set(f"QR code generated and saved successfully as '{filename}'.")
     number += 1
