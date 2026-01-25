@@ -9,12 +9,12 @@ path = os.getcwd()
 
 def main():
     global number
-    number += 1
     if coify.get().strip() == "":
         result_message.set("Please enter some text to generate a QR code.")
         return
+    number += 1
     img = qrcode.make(coify.get())
-    filename = f"{path}/qrcode_suite{number}.png" 
+    filename = path + "/qrcode_suite" + str(number) + ".png"
     img.save(filename)
     result_message.set(f"QR code generated and saved successfully as '{filename}'.")
 
@@ -27,19 +27,17 @@ def history():
         history_message = "No QR code files found."
     result_message.set(history_message)
 def preview():
-    root = Toplevel()
     if number == 0:
         result_message.set("No QR code to preview.")
-        root.destroy()
     else:
-        filename = f"qrcode_suite{number}.png"
-        ttk.Label(root, text=filename).grid(column=2, row=2, sticky=(W, E), padx=5, pady=5)
-        ttk.Button(root, text="Close", command=root.destroy).grid(column=2, row=4, sticky=(W, E), padx=5, pady=5)
+        previewwin = Toplevel()
+        filename = path + "/qrcode_suite" + str(number) + ".png"
+        ttk.Label(previewwin, text=filename).grid(column=2, row=2, sticky=(W, E), padx=5, pady=5)
+        ttk.Button(previewwin, text="Close", command=previewwin.destroy).grid(column=2, row=4, sticky=(W, E), padx=5, pady=5)
         img = ImageTk.PhotoImage(Image.open(filename))
-        panel = ttk.Label(root, image=img)
+        panel = ttk.Label(previewwin, image=img)
         panel.image = img
         panel.grid(column=2, row=3, sticky=(W, E), padx=5, pady=5)
-        root.mainloop()
 root = Tk()
 root.title("Basic QR Code Generator")
 root.columnconfigure(0, weight=1)
