@@ -66,3 +66,7 @@ AI was used to debug code and to educate myself on features of the library the d
 
 ## Licence
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+### Credits
+
+credit to @acorn the orph sticker in banner it is designed by them and is publically avalible at [stickers.hackclub.com](https://stickers.hackclub.com)
+
