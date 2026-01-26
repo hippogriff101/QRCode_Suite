@@ -1,5 +1,7 @@
 ﻿# QRCode_Suite
 
+![](banner.png)
+
 A collection of differant ways to make QR Code's using python! This includes a version for terminal, desktop app, Discord and Slack! I will then make a website to locate it all.
 
 > [!NOTE]
